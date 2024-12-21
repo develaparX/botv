@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from fake_useragent import UserAgent
 import time
+import random
 
 def scroll_down(driver, interval, duration):
     end_time = time.time() + duration
@@ -28,8 +29,17 @@ for i in range(100):
             # Inisialisasi WebDriver dengan opsi
             driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
+            # Set ukuran dan posisi jendela yang acak
+            width = random.randint(800, 1200)  # Lebar acak antara 800 dan 1200 piksel
+            height = random.randint(600, 900)  # Tinggi acak antara 600 dan 900 piksel
+            x_position = random.randint(0, 300)  # Posisi X acak antara 0 dan 300 piksel
+            y_position = random.randint(0, 200)  # Posisi Y acak antara 0 dan 200 piksel
+
+            driver.set_window_size(width, height)
+            driver.set_window_position(x_position, y_position)
+
             # Kunjungi halaman web
-            url = "https://investsocial.com/id/forum/area-diskusi-trading/percakapan-forex-secara-keseluruhan/jurnal-trading/14185943-arunikax-s-trading-journal?p=14240601"
+            url = "https://investsocial.com/id/forum/area-diskusi-trading/percakapan-forex-secara-keseluruhan/jurnal-trading/14185943-arunikax-s-trading-journal?p=14243853#post14243853#post14243853"
             driver.get(url)
 
             # Tunggu sampai halaman selesai dimuat

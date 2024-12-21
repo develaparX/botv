@@ -14,7 +14,7 @@ def scroll_down(driver, interval, duration):
         driver.execute_script("window.scrollBy(0, window.innerHeight);")
         time.sleep(interval)
 
-for i in range(100):
+for i in range(86):
     success = False
     while not success:
         try:
@@ -39,7 +39,7 @@ for i in range(100):
             driver.set_window_position(x_position, y_position)
 
             # Kunjungi halaman web
-            url = "https://investsocial.com/id/forum/area-diskusi-trading/percakapan-forex-secara-keseluruhan/jurnal-trading/14185943-arunikax-s-trading-journal?p=14240601"
+            url = "https://investsocial.com/id/forum/area-diskusi-trading/percakapan-forex-secara-keseluruhan/jurnal-trading/14282605-asrifai-s-trading-journal/page2#post14291345"
             driver.get(url)
 
             # Tunggu sampai halaman selesai dimuat
